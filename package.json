@@ -1,0 +1,28 @@
+{
+  "name": "RESTLoader",
+  "version": "1.0.0",
+  "description": "easy express server",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EikosPartners/RESTLoader.git"
+  },
+  "keywords": [
+    "responder",
+    "express",
+    "server"
+  ],
+  "author": "DanTanzer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EikosPartners/RESTLoader/issues"
+  },
+  "homepage": "https://github.com/EikosPartners/RESTLoader/#readme",
+  "devDependencies": {
+   },
+  "dependencies": {
+    "lodash": "^3.10.0"
+  }
+}
