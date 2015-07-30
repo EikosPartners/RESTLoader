@@ -15,6 +15,10 @@ var _ = require('lodash'),
 module.exports = {
     respond: function ( req, res, format ) {
         return _.once(function ( error, data ) {
+            //disable browser caching
+            res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+            res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+            res.setHeader("Expires", "0"); // Proxies.
             if (req.query.formatted !== void 0 || format) {
                 res.send(formatted +
                     '<pre><code class="json">' +
