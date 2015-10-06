@@ -24,7 +24,7 @@ module.exports = {
                     '<pre><code class="json">' +
                     JSON.stringify(data, null, 4) +
                     '</code></pre>');
-            }
+            } else 
             if (error) {
                 data = {error: error};
                 res.status(404).send(data);
@@ -40,10 +40,10 @@ module.exports = {
             for (key in API) {
                 console.log('registering ' + key + ' as ' + API[key].type);
                 app[API[key].type](key, API[key].responder);
-                //if (API[key].type !== 'get' && API[key].type !== 'use') {
-                //    console.log('registering ' + key + ' as get');
-                //    app.get(key, API[key].responder);
-                //}
+                if (API[key].type !== 'get' && API[key].type !== 'use') {
+                    console.log('registering ' + key + ' as get');
+                    app.get(key, API[key].responder);
+                }
             }
         });
     }
