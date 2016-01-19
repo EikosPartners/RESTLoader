@@ -24,10 +24,10 @@ module.exports = {
                     '<pre><code class="json">' +
                     JSON.stringify(data, null, 4) +
                     '</code></pre>');
-            } else 
+            } else
             if (error) {
-                data = {error: error};
-                res.status(404).send(data);
+                //data = {error: error}; currently not used
+                res.status(404).send(error.error);
             } else {
                 res.json(data);
             }
